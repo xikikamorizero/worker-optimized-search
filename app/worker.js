@@ -14,5 +14,6 @@ onmessage = (e) => {
     name: (a, b) => a.name.localeCompare(b.name),
   };
 
+  
   postMessage(phonesData.sort(sortFunctions[orderProp]));
 };
