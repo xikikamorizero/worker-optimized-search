@@ -5,23 +5,24 @@
 
       <p>
         Search:
-        <input ng-model="$ctrl.query" />
+        <input ng-model="query" ng-change="handleWorker()"/>
       </p>
 
       <p>
         Sort by:
-        <select ng-model="$ctrl.orderProp">
+        <select ng-model="orderProp"  ng-change="handleWorker()">
           <option value="name">Alphabetical</option>
           <option value="age">Newest</option>
         </select>
       </p>
 
+      </button>
     </div>
     <div class="col-md-10">
       <!--Body content-->
 
       <ul class="phones">
-        <li ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp"
+        <li ng-repeat="phone in phones"
             class="thumbnail phone-list-item">
           <a href="#!/phones/{{phone.id}}" class="thumb">
             <img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
